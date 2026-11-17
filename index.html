@@ -508,6 +508,15 @@ h3 { text-wrap: pretty; }
   .nav a:nth-last-child(-n + 3) { border-bottom: 0; }
 }
 #story .world-grid { grid-template-columns: minmax(0, 1fr); }
+.plain-body p + p, .growth p + p { margin-top: 6px; }
+.growth-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 3vw, 34px); }
+.growth { padding: 18px 0 0; border-top: 2px solid #dfafc6; }
+.growth.blue { border-top-color: #9cc3d6; }
+.growth h3 { margin: 0 0 8px; font: 700 clamp(19px, 2vw, 22px)/1.4 var(--serif); color: var(--rose); }
+.growth.blue h3 { color: #397089; }
+#changes { margin-top: var(--section-space); }
+@media (max-width: 700px) { .growth-grid { grid-template-columns: minmax(0, 1fr); } }
+@media print { .growth { break-inside: avoid; } }
 </style>
 </head><body>
 <div class="page" id="top">
@@ -519,10 +528,9 @@ h3 { text-wrap: pretty; }
 </div><div class="hero-context"><p class="hero-sub">深海魚に夢中な彼女と、そんな彼女に夢中になる彼。<br/>王道少女漫画のときめきを描く、<span class="genre">お仕事ラブコメディ。</span></p>
 <div class="hero-meta">ジャンル：お仕事ラブコメディ<br/>想定掲載媒体：『BE・LOVE』（講談社）／『ココハナ』（集英社）</div>
 </div></div><figure class="cover-wrap"><img alt="水槽で深海生物を撮影する美波と、そんな美波をやさしく見守る洋介。淡いパステルタッチの表紙イラスト" class="cover" src="images/cover.webp" width="1054" height="1492"/></figure></div></section>
-<nav aria-label="ページ内目次" class="nav"><div class="inner"><a href="#characters">登場人物</a><a href="#episode">第1話</a><a href="#walls">4つの壁</a><a href="#ending">結末</a><a href="#scene">見せたいシーン</a></div></nav>
+<nav aria-label="ページ内目次" class="nav"><div class="inner"><a href="#characters">登場人物</a><a href="#episode">第1話</a><a href="#walls">4つの壁</a><a href="#climax">結末</a><a href="#ending">最終話</a><a href="#scene">見せたいシーン</a></div></nav>
 <main>
 <section class="section inner" id="theme"><div class="s-head"><span class="num">01</span><h2>私の「好き」の軸</h2></div><div class="likes"><div class="like"><div class="index">01</div><p>恋をしたことで見えてくる、<br/>人間の不器用さやかわいさ</p></div><div class="like"><div class="index">02</div><p>好きなものを追いかけた先で、<br/>想像もしなかった世界に出会うこと</p></div><div class="like"><div class="index">03</div><p>出会いによって、<br/>お互いの人生が変わっていくこと</p></div></div></section>
-<section class="storyworld" id="story"><div class="inner world-grid"><div><h2 class="world-title">あらすじ</h2><p class="world-desc">舞台は、閉館の危機にある海辺の町の小さな水族館。</p><p class="world-desc">深海魚を愛する飼育員・美波は、廃止寸前の深海魚コーナーを守るため、館長の息子・洋介とSNS広報に挑む。</p><p class="world-desc">正反対の二人が、仕事にも恋にも不器用にぶつかりながら、「欠点」だと思われていたものを魅力に変えていく。</p></div></div></section>
 <section class="section inner" id="characters"><div class="s-head"><span class="num">02</span><h2>登場人物</h2></div><div class="character-grid">
 <article class="char-card pink"><figure><img alt="目を輝かせる飼育員・藤沢美波のキャラクターイメージ" src="images/minami.webp" width="400" height="500"/></figure><div><h3 class="char-name">藤沢 美波 <span>28歳</span></h3><p class="char-role">深海魚をこよなく愛する飼育員</p><div class="char-copy"><p>大学院まで進学した、生粋の深海魚オタク。奇妙な姿にも深海で生き抜く理由があると知り、その奥深さに夢中になった。</p><p>かつて自分の「好き」を否定された経験から、人には理解されないと思っている。それでも、魚への愛情は揺るがない。</p></div></div></article>
 <article class="char-card blue"><figure><img alt="穏やかに微笑む瀬戸洋介のキャラクターイメージ" src="images/yosuke.webp" width="400" height="500"/></figure><div><h3 class="char-name">瀬戸 洋介 <span>34歳</span></h3><p class="char-role">水族館を愛する合理主義者</p><div class="char-copy"><p>館長の息子。父から聞く来館者の楽しそうな話を誇りに育ち、いつか「うちの水族館」を守ろうと東京で経験を積んだ。</p><p>存続のためには厳しい判断もする。恋愛もそれなりに経験してきたが、美波への恋には思いがけず不器用になる。</p></div></div></article>
@@ -534,8 +542,11 @@ h3 { text-wrap: pretty; }
 <article class="wall"><div class="wall-left"><div class="wall-num">03</div><h3 class="q">バズったのに、お客さんが来ない！</h3></div><div class="wall-body"><p>SNSのフォロワーは増えたものの、来館者数は伸び悩む。開館しても誰一人来館しない朝を迎えることも。</p><p>美波は毎年遠足に来る小学生たちを自ら案内し、飼育員ならではの知識や経験を生かして子どもたちの心をつかむ。</p><p>館内展示の改善や年間パスポートの活用、地元の漁師との連携を通じて、<strong>少しずつ水族館そのもののファンを増やしていく。</strong></p></div></article>
 <article class="wall"><div class="wall-left"><div class="wall-num">04</div><h3 class="q">恋人だからこそ、甘えない・甘やかさない</h3></div><div class="wall-body"><p>付き合いはじめた二人。だが、深海魚コーナーの存続を決めるのは洋介自身だ。</p><p>「彼女だから残した」と言わせたくない美波と、条件を一切ゆるめない洋介。</p><p>迎えた期限の日、来館者数は目標に届かず、洋介は約束どおり廃止を告げる。</p><p>その日の夜、心配する洋介に美波は告げる。</p><p>「……今日は、会いたくないです」</p><p>洋介の判断が正しいと理解しながらも、気持ちが追いつかない美波。</p><p><strong>仕事で妥協しないことと、恋人として支え合うことの違いに気づき、二人は改めて向き合う。</strong></p></div></article>
 </div></section>
-<section class="section inner" id="ending"><div class="s-head"><span class="num">06</span><h2>結末｜深海魚にはかなわない</h2></div><div class="ending"><div class="ending-content"><p>深海魚コーナーの廃止を発表すると、全国の深海魚ファンから嘆願書が届き、地元住民からも存続を願う声が寄せられる。</p><p>それは広報活動だけでなく、美波が飼育員として長年積み重ねてきた努力の成果でもあった。</p><p>深海魚コーナーの価値を見直した洋介は、新たな経営戦略を打ち出す。</p><p>「深海魚に特化した水族館にしませんか」</p><p>設備改修のためのクラウドファンディングに挑戦。飼育員による特別解説ツアーなどの返礼品も人気を集め、募集終了間際に目標金額を達成する。</p><p>特別ツアーは新たな収益源となり、<strong>かつて廃止しようとしていた深海魚コーナーが、水族館の看板となる。</strong></p><p>水族館は経営難を乗り越え、美波と洋介は、仕事でも人生でもパートナーとなる。</p><p>そして迎えた、水族館での結婚式。</p><p>ウェディングドレス姿でも魚に夢中な美波を見て、洋介はつぶやく。</p><div class="ending-quote">「……ほんと、かなわないな」</div></div></div></section>
+<section class="section inner" id="climax"><div class="s-head"><span class="num">05</span><h2>結末｜深海魚が水族館を救う</h2></div><div class="plain-body"><p>深海魚コーナーの廃止を発表すると、全国の深海魚ファンから嘆願書が届き、地元住民からも存続を願う声が寄せられる。</p><p>それは広報活動だけでなく、美波が飼育員として長年積み重ねてきた努力の成果でもあった。</p><p>深海魚コーナーの価値を見直した洋介は、新たな経営戦略を打ち出す。</p><p>「深海魚に特化した水族館にしませんか」</p><p>設備改修のためのクラウドファンディングに挑戦。飼育員による特別解説ツアーなどの返礼品も人気を集め、募集終了間際に目標金額を達成する。</p><p>特別ツアーは新たな収益源となり、<strong>かつて廃止しようとしていた深海魚コーナーが、水族館の看板となる。</strong></p></div></section>
+<section class="section inner" id="ending"><div class="s-head"><span class="num">06</span><h2>最終話｜深海魚にはかなわない</h2></div><div class="ending"><div class="ending-content"><p>深海魚を看板とした水族館は経営難を乗り越え、美波と洋介は、仕事でも人生でもパートナーとなる。</p><p>そして迎えた、水族館での結婚式。</p><p>ウェディングドレス姿でも魚に夢中な美波を見て、洋介はつぶやく。</p><div class="ending-quote">「……ほんと、かなわないな」</div></div></div></section>
 <section class="keyscene" id="scene"><div class="inner key-grid"><figure class="key-img"><button class="manga-trigger" type="button" aria-label="深夜の水族館の漫画を拡大表示" aria-haspopup="dialog"><img alt="深夜の水槽の前で「……よかった」と涙をこぼして笑う美波。その頭に洋介がそっと手を置き、美波が驚いて見上げる漫画の1ページ。" decoding="async" src="images/scene-midnight.jpg" width="1122" height="1402"/></button></figure><div class="key-copy"><div class="mini-label">この作品で、最も描きたい瞬間</div><h2>深夜の水族館</h2><p>体調を崩した深海魚を、洋介とともに懸命に世話する美波。</p><p>深夜、ようやく回復の兆しが見え、安心した美波の目から涙がこぼれる。</p><p>その姿に、洋介は思わず彼女の頭を撫でてしまう。自分でも予想外の行動に戸惑いながら、美波への恋心を自覚する。</p><div class="scene-point">深海魚に夢中な美波の姿が、<br/>洋介を恋に落とす。</div></div></div></section>
+<section class="section inner" id="love"><div class="s-head"><span class="num">07</span><h2>この作品で描きたい恋愛</h2></div><div class="plain-body"><p>好きな人に嫌われたくなくて、いつも通りに振る舞えなくなる美波。</p><p>普段は冷静で合理的なのに、美波の些細な言動に一喜一憂し、彼女を喜ばせることに夢中になる洋介。</p><p><strong>恋をすることで、普段は見せない一面が顔を出す。そんな大人の不器用さやかわいさを、交際前から交際後まで描いていきたい。</strong></p></div></section>
+<section class="section inner" id="growth"><div class="s-head"><span class="num">08</span><h2>出会いによる二人の変化</h2></div><div class="growth-grid"><article class="growth pink"><h3>美波</h3><p>深海魚の魅力を人に伝えることを諦めていた美波は、洋介との出会いを通じて、大好きなものを誰かと共有する喜びを知る。</p><p>また、自分の「好き」を我慢しなくても、愛されることを知る。</p></article><article class="growth blue"><h3>洋介</h3><p>合理的な判断を重視していた洋介は、美波との出会いを通じて、人の情熱が生み出す可能性を知る。</p><p>経営を圧迫する存在だと考えていた深海魚に新たな価値を見いだし、水族館の未来を切り開いていく。</p></article></div></section>
 <section class="inner changes" id="changes"><div class="change-grid"><div><div class="mini-label" style="margin-bottom:8px">前回からの変更点</div><h2>「好き」を<br/>掘り下げて。</h2></div><div><p>前回のフィードバックをもとに「好き」をさらに掘り下げ、<span class="key">「やっぱり少女漫画が大好きなんだ！」</span>と再認識。</p><p style="margin-top:9px">恋愛要素を強め、交際前だけでなく交際後に訪れる壁も追加した。</p><p style="margin-top:9px">また、実際の水族館の経営再建事例をリサーチし、主人公たちが直面する困難と、その乗り越え方を具体化した。</p></div></div></section>
 <section class="section inner extras" id="extra"><div class="s-head"><h2>おまけ｜ほかにも描きたい、恋のシーン</h2></div><p class="extra-intro">仕事への情熱が恋のきっかけになり、恋をすることで二人の知らなかった表情が見えてくる。<span class="manga-hint">（イラストはタップで大きく表示できます）</span></p>
 <div class="omake-grid">
