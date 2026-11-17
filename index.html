@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#fff" name="theme-color"/><meta content="『深海魚にはかなわない』（仮）—深海魚を愛する飼育員と、水族館を守ろうとする館長の息子。大人の王道少女漫画のときめきを描くお仕事ラブコメディ。" name="description"/>
+<title>深海魚にはかなわない（仮）｜漫画企画書・詳細版</title>
+<style>
+:root {
+  --ink: #34475a;
+  --deep: #294d70;
+  --rose: #9d4e73;
+  --pink: #f9edf3;
+  --sky: #eaf5fb;
+  --paper: #fff;
+  --muted: #56697b;
+  --line: #d9e5ec;
+  --gutter: clamp(18px, 4.8vw, 60px);
+  --section-space: clamp(60px, 7.5vw, 100px);
+  --sans: "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  --serif: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: 20px; }
+body {
+  margin: 0;
+  background: #f0f6f9;
+  color: var(--ink);
+  font: 16px/1.9 var(--sans);
+  letter-spacing: .015em;
+  overflow-wrap: anywhere;
+}
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--rose); }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--rose); outline-offset: 4px; }
+img { display: block; width: 100%; height: auto; }
+figure { margin: 0; }
+p { margin: 0 0 .85em; }
+h1, h2, h3 { margin: 0; line-height: 1.5; }
+h2 {
+  color: var(--deep);
+  font: 700 clamp(24px, 3.25vw, 35px)/1.5 var(--serif);
+  letter-spacing: .025em;
+}
+h3 { color: var(--deep); }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.page { max-width: 1240px; margin: auto; background: var(--paper); }
+.inner { width: min(1040px, 100% - 2 * var(--gutter)); margin-inline: auto; }
+
+.top { border-top: 5px solid #b5dcea; border-bottom: 1px solid var(--line); }
+.top .inner {
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-block: 8px;
+}
+.logo { color: var(--deep); font: 700 14px/1.55 var(--serif); }
+.top-right { display: flex; align-items: center; gap: clamp(12px, 2vw, 23px); }
+.top-right a { font-size: 13px; white-space: nowrap; }
+.top-right button, .image-zoom-close {
+  border: 1px solid #b9ceda;
+  background: #fff;
+  color: var(--deep);
+  padding: 8px 13px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.top-right button:hover, .image-zoom-close:hover { background: var(--sky); }
+
+.hero { padding-block: clamp(38px, 5vw, 70px); }
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.22fr) minmax(0, .9fr);
+  gap: clamp(28px, 5.5vw, 78px);
+  align-items: center;
+}
+.mini-label { margin-bottom: 12px; color: var(--rose); font-size: 13px; font-weight: 700; }
+.hero-visual-logo { max-width: 545px; margin: 0 0 22px; }
+.concept {
+  margin-bottom: 14px;
+  color: var(--deep);
+  font: 700 clamp(23px, 3vw, 34px)/1.55 var(--serif);
+  letter-spacing: .04em;
+}
+.hero-sub { color: var(--muted); text-wrap: pretty; }
+.hero-sub .genre { white-space: nowrap; }
+.hero-meta {
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+.cover-wrap {
+  width: 100%;
+  max-width: 392px;
+  justify-self: center;
+  border: 1px solid #d6e8ef;
+  padding: 9px;
+  background: var(--sky);
+  box-shadow: 8px 8px 0 var(--pink);
+}
+
+.nav { background: #f5fafd; border-block: 1px solid var(--line); }
+.nav .inner { display: flex; justify-content: space-between; flex-wrap: wrap; }
+.nav a { padding: 12px 7px; color: var(--deep); font-size: 13px; white-space: nowrap; }
+.nav a:hover { background: var(--sky); color: var(--rose); }
+.section { padding-top: var(--section-space); }
+.s-head { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.s-head .num { color: #527d94; font: italic 22px/1 Georgia, serif; }
+.s-head::after { content: ""; flex: 1 1 44px; border-top: 1px solid var(--line); }
+.intro, .extra-intro { margin-bottom: 26px; color: var(--muted); }
+
+.likes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.like { padding: 20px; border-top: 2px solid #afd5e5; background: #f2f9fc; }
+.like:nth-child(2) { background: var(--pink); border-color: #dfafc6; }
+.like:nth-child(3) { background: #f7f4fa; border-color: #cfc0de; }
+.like .index { margin-bottom: 6px; color: #527d94; font: italic 27px/1.2 Georgia, serif; }
+.like:nth-child(2) .index { color: var(--rose); }
+.like:nth-child(3) .index { color: #766091; }
+.like p { margin: 0; font-weight: 700; line-height: 1.75; }
+
+.storyworld, .keyscene { margin-top: var(--section-space); padding-block: clamp(35px, 5vw, 64px); background: #f0f8fc; }
+.world-grid, .key-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(28px, 5vw, 64px);
+}
+.world-title, .key-copy h2 { margin-bottom: 16px; }
+.world-desc:last-child { margin-bottom: 0; }
+.numbers { padding: clamp(16px, 4vw, 30px); border: 1px solid var(--line); background: #fff; }
+.numbers .small, .numbers .foot { color: var(--muted); font-size: 13px; }
+.numbers .figures { display: flex; justify-content: center; align-items: baseline; gap: clamp(9px, 2vw, 20px); margin: 9px 0; }
+.figures strong { color: var(--deep); font: 400 clamp(43px, 5.5vw, 66px)/1.15 Georgia, serif; white-space: nowrap; }
+.figures .to { color: #638399; font-size: 24px; }
+.figures .want { color: var(--rose); }
+.numbers .unit { margin-left: 2px; font: 700 16px var(--sans); }
+
+.character-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.char-card {
+  display: grid;
+  grid-template-columns: minmax(0, .55fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(13px, 2vw, 22px);
+  padding: clamp(14px, 2.2vw, 23px);
+  border: 1px solid var(--line);
+  border-top: 3px solid #dfafc6;
+  background: #fdf9fb;
+}
+.char-card.blue { border-top-color: #a9d3e6; background: #f5fafd; }
+.char-card figure { max-width: 175px; align-self: start; }
+.char-name { font: 700 clamp(21px, 2.3vw, 27px)/1.45 var(--serif); }
+.char-name span { font: 400 14px var(--sans); white-space: nowrap; }
+.char-role { margin: 4px 0 12px; color: var(--rose); font-size: 14px; line-height: 1.55; font-weight: 700; }
+.char-card.blue .char-role { color: #397089; }
+.char-copy { font-size: 15px; line-height: 1.85; }
+.char-copy p:last-child { margin-bottom: 0; }
+
+.episode { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, .85fr); align-items: center; gap: clamp(25px, 5vw, 62px); }
+.ep-body p:last-child { margin-bottom: 0; }
+.dialogue { margin: 19px 0; padding-left: 15px; border-left: 3px solid #dfafc6; color: var(--rose); font: 700 clamp(20px, 2.5vw, 27px)/1.6 var(--serif); }
+.dialogue.smaller { margin-top: 10px; border-color: #afd5e5; color: var(--deep); font-size: clamp(18px, 2.2vw, 23px); }
+.episode-art { padding: 34px 16px; background: var(--sky); border-block: 1px solid #d5e8f2; color: var(--deep); text-align: center; }
+.episode-art .big { font: 400 clamp(68px, 9vw, 107px)/1.1 Georgia, serif; margin: 5px 0; }
+.episode-art .big span { font: 700 23px var(--sans); }
+.episode-art .art-t { font-size: 15px; }
+.episode-art small { display: block; margin-top: 11px; font-size: 12px; color: var(--muted); }
+
+.wall-list { display: grid; gap: 15px; }
+.wall { display: grid; grid-template-columns: minmax(185px, 23%) minmax(0, 1fr); border: 1px solid var(--line); }
+.wall-left { padding: 22px; background: var(--sky); }
+.wall:nth-child(2) .wall-left { background: var(--pink); }
+.wall:nth-child(3) .wall-left { background: #f3eff8; }
+.wall-num { color: #527d94; font: italic 32px/1 Georgia, serif; }
+.wall:nth-child(2) .wall-num { color: var(--rose); }
+.wall:nth-child(3) .wall-num { color: #766091; }
+.wall-left .q { margin-top: 8px; font-size: 17px; }
+.wall-body { padding: 21px clamp(16px, 3vw, 30px); }
+.wall-body p:last-child { margin-bottom: 0; }
+.wall-body .say { color: var(--rose); font: 700 20px/1.65 var(--serif); }
+.key-img { padding: 7px; background: #fff; border: 1px solid var(--line); }
+.scene-point {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #cbdee9;
+  color: var(--rose);
+  font: 700 20px/1.7 var(--serif);
+}
+
+.extra-grid, .gift-scene { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(28px, 6vw, 74px); align-items: center; }
+.extras h3 { font: 700 clamp(23px, 2.8vw, 32px)/1.55 var(--serif); }
+.extra-grid h3, .gift-copy h3 { margin-bottom: 14px; }
+.tag { display: inline-block; margin-bottom: 11px; padding: 3px 9px; background: var(--pink); color: var(--rose); font-size: 12px; font-weight: 700; }
+.extra-grid figure, .gift-image { width: 100%; max-width: 360px; justify-self: center; }
+.extras figcaption { padding: 9px 0 0; color: var(--muted); text-align: center; font-size: 13px; line-height: 1.65; }
+.extra-note { margin-top: 20px; padding: 17px 18px; border-left: 3px solid #afd5e5; background: #f2f9fc; }
+.gift-scene { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); margin-top: 45px; }
+.gift-image { max-width: 408px; }
+.gift-copy .gift-highlight { color: var(--rose); font-weight: 700; }
+.gift-copy .gift-footnote { margin-bottom: 0; color: var(--muted); font-size: 12px; }
+
+.manga-gallery-section {
+  margin-top: 48px;
+  padding: clamp(24px, 4vw, 43px) clamp(12px, 3.7vw, 46px);
+  border-block: 1px solid #e7dbe3;
+  background: #fdf8fb;
+}
+.manga-heading { margin: 0 auto 22px; text-align: center; }
+.manga-heading h3 { margin-bottom: 9px; }
+.manga-heading h3 span { color: var(--rose); }
+.manga-heading p { margin: 0 0 6px; }
+.manga-hint, .manga-disclaimer { color: var(--muted); font-size: 13px; }
+.manga-pages {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  direction: rtl;
+  align-items: start;
+  column-gap: 17px;
+  max-width: 860px;
+  margin-inline: auto;
+}
+.manga-page { min-width: 0; direction: ltr; }
+.manga-page-index { margin-bottom: 5px; color: var(--rose); font-size: 12px; letter-spacing: .12em; font-weight: 700; }
+.manga-trigger { width: 100%; display: block; padding: 0; border: 0; background: #fff; cursor: zoom-in; }
+.manga-trigger img { outline: 1px solid #dce3e9; outline-offset: -1px; }
+.manga-disclaimer { text-align: center; margin: 19px 0 0; }
+.image-zoom {
+  width: min(895px, 100% - 24px);
+  max-width: none;
+  max-height: 94dvh;
+  margin: auto;
+  padding: 0 12px 12px;
+  overscroll-behavior: contain;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.image-zoom::backdrop { background: rgba(26, 41, 60, .78); }
+.image-zoom-bar { position: sticky; top: 0; z-index: 1; display: flex; justify-content: flex-end; padding: 8px 0; background: #fff; }
+.image-zoom img { width: 100%; margin: auto; }
+
+.ending { padding: clamp(22px, 5vw, 54px); background: var(--pink); border-top: 2px solid #dfafc6; }
+.ending-content { max-width: 760px; }
+.ending-quote { color: var(--rose); font: 700 clamp(23px, 3vw, 32px)/1.6 var(--serif); }
+.changes { margin-block: var(--section-space); padding-top: 24px; border-top: 1px solid var(--line); }
+.changes .change-grid { display: grid; grid-template-columns: minmax(0, .38fr) minmax(0, 1fr); gap: 23px; }
+.changes .key { color: var(--rose); font-weight: 700; }
+.footer { padding-block: 19px; background: #f5fafd; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+.footer .inner { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; column-gap: 20px; }
+.footer .inner > span > span { font-size: 12px !important; }
+.footer a { display: inline-block; padding-block: 5px; color: var(--deep); white-space: nowrap; }
+
+@media (max-width: 900px) {
+  .nav .inner { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); text-align: center; }
+  .nav a { border-bottom: 1px solid #e8f0f4; }
+  .nav a:nth-last-child(-n + 3) { border-bottom: 0; }
+  .like p br { display: none; }
+  .char-card { grid-template-columns: minmax(0, .42fr) minmax(0, 1fr); }
+}
+@media (max-width: 700px) {
+  .top-right a { display: none; }
+  .hero-layout, .world-grid, .character-grid, .episode, .key-grid, .extra-grid, .gift-scene { grid-template-columns: minmax(0, 1fr); }
+  .hero-visual-logo { max-width: 480px; margin-inline: auto; }
+  .hero { padding-block: 30px 36px; }
+  .hero-meta { margin-top: 15px; }
+  .hero-sub br, .wide-only { display: none; }
+  .cover-wrap { max-width: min(83%, 354px); }
+  .nav a { font-size: 12px; padding: 10px 3px; }
+  .s-head { gap: 9px; margin-bottom: 17px; }
+  .s-head::after { flex: 1 0 8px; }
+  .likes { grid-template-columns: 1fr; gap: 9px; }
+  .like { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 10px; align-items: baseline; padding: 12px 14px; border: 0; border-left: 2px solid #afd5e5; }
+  .like .index { margin: 0; white-space: nowrap; }
+  .char-card { grid-template-columns: minmax(0, .38fr) minmax(0, 1fr); }
+  .wall { grid-template-columns: minmax(0, 1fr); }
+  .wall-left { display: flex; gap: 12px; align-items: baseline; padding: 14px 16px; }
+  .wall-left .q { margin: 0; }
+  .wall-left .q br, .scene-point br { display: none; }
+  .wall-num { flex: none; font-size: 26px; white-space: nowrap; }
+  .wall-body .say, .scene-point { text-wrap: balance; }
+  .wall-body { padding-block: 16px; }
+  .key-grid { gap: 20px; }
+  .key-copy { grid-row: 1; }
+  .gift-copy { grid-row: 1; }
+  .manga-pages { direction: ltr; grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .manga-gallery-section { margin-inline: -6px; }
+  .manga-heading h3 { font-size: clamp(21px, 5.65vw, 29px); }
+  .changes .change-grid { grid-template-columns: 1fr; gap: 10px; }
+  .changes h2 br { display: none; }
+}
+@media (max-width: 445px) {
+  .char-card { grid-template-columns: 96px minmax(0, 1fr); align-items: center; }
+  .char-card > div { display: contents; }
+  .char-card figure { grid-area: 1 / 1 / span 2 / 2; }
+  .char-name { align-self: end; }
+  .char-role { align-self: start; margin: 0; }
+  .char-copy { grid-column: 1 / -1; }
+}
+@media print {
+  body { background: #fff; font-size: 12px; }
+  .page { max-width: none; }
+  .inner { width: 100%; }
+  .top, .nav, .manga-hint, .image-zoom { display: none; }
+  .hero { padding-block: 12px 26px; }
+  .cover-wrap { box-shadow: none; }
+  .section { padding-top: 30px; }
+  .storyworld, .keyscene { margin-top: 30px; padding-block: 18px; }
+  .changes { margin-block: 30px; }
+  .char-card, .wall, .key-grid, .manga-page, .ending { break-inside: avoid; }
+  .manga-gallery-section { break-before: page; }
+  .manga-pages { direction: rtl; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
+}
+
+/* Reading order and visual hierarchy */
+:root {
+  --section-space: clamp(56px, 7.2vw, 93px);
+  --reading-width: 760px;
+  --wide-width: 1040px;
+}
+body { line-height: 1.82; }
+.top { border-top: 4px solid #acd5e7; }
+.top .inner { min-height: 53px; }
+.top-right button { padding: 5px 11px; }
+.hero { padding-block: clamp(32px, 5.5vw, 74px); }
+.hero-layout {
+  grid-template-areas: "copy cover";
+  gap: clamp(32px, 6vw, 86px);
+}
+.hero-copy { grid-area: copy; }
+.hero-lead { grid-area: lead; align-self: end; }
+.hero-context { grid-area: context; align-self: start; }
+.cover-wrap { grid-area: cover; align-self: center; box-shadow: 7px 7px 0 var(--pink); }
+.hero-lead .mini-label { color: var(--muted); font-weight: 500; }
+.hero-sub { margin-bottom: 0; }
+.hero-meta { padding-top: 0; border: 0; margin-top: 14px; color: var(--muted); }
+.nav .inner { display: flex; flex-wrap: nowrap; justify-content: center; gap: clamp(14px, 5.5vw, 74px); }
+.nav a { border-bottom: 0; }
+main > .section, .changes { max-width: var(--reading-width); }
+main > #characters, main > #extra { max-width: var(--wide-width); }
+.s-head { display: block; margin-bottom: clamp(16px, 2.5vw, 25px); }
+.s-head .num, .s-head::after { display: none; }
+h2 { letter-spacing: .015em; text-wrap: balance; }
+h3 { text-wrap: pretty; }
+
+.episode { display: block; }
+.episode-art {
+  margin-top: 20px;
+  padding: 12px 0 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: transparent;
+  text-align: left;
+}
+.episode-art > div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px 15px;
+}
+.episode-art .big { margin: 0; font-size: 31px; white-space: nowrap; }
+.episode-art .big span { font-size: 13px; }
+.episode-art .art-t { font-size: 13px; }
+.episode-art .art-t br { display: none; }
+.episode-art small { margin: 0; }
+
+.character-grid { gap: clamp(21px, 4vw, 52px); }
+.char-card, .char-card.blue {
+  padding: 18px 0 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: transparent;
+}
+
+.storyworld { background: #f2f8fc; }
+.world-grid { max-width: var(--reading-width); grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(24px, 4.5vw, 45px); }
+.numbers { border: 0; padding: 14px 0 0; background: transparent; }
+.numbers .figures { justify-content: start; margin-block: 5px 9px; }
+.numbers .figures strong { font-size: clamp(40px, 5.2vw, 56px); }
+.numbers .art-t { text-align: start !important; }
+
+.wall-list { gap: 0; border-bottom: 1px solid var(--line); }
+.wall { grid-template-columns: minmax(0, 1fr); border: 0; border-top: 1px solid var(--line); padding: 17px 0; }
+.wall .wall-left, .wall:nth-child(2) .wall-left, .wall:nth-child(3) .wall-left {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 0;
+  background: transparent;
+}
+.wall-left .q { margin: 0; font: 700 clamp(17px, 2.2vw, 21px)/1.55 var(--serif); }
+.wall-left .q br { display: none; }
+.wall-num { flex: none; color: var(--muted) !important; font-size: 20px; }
+.wall-body { padding: 8px 0 0 35px; }
+.wall-body .say { margin-block: 8px; }
+
+.keyscene { background: #eff7fb; }
+.key-grid { gap: clamp(24px, 4vw, 50px); }
+.key-img { padding: 0; border: 0; }
+.scene-point { margin-top: 13px; }
+
+.extra-grid { gap: clamp(25px, 4.4vw, 58px); }
+.extra-grid figure { max-width: 320px; }
+.extra-note { background: transparent; border: 0; border-top: 1px solid var(--line); padding: 13px 0 0; }
+.tag { padding: 0; background: transparent; color: var(--muted); font-weight: 600; }
+.manga-gallery-section {
+  margin-top: clamp(31px, 4vw, 48px);
+  padding-inline: 0;
+  background: transparent;
+  border-color: var(--line);
+}
+.manga-heading { max-width: var(--reading-width); }
+.manga-page-index { display: none; }
+.gift-scene { margin-top: clamp(28px, 4vw, 45px); }
+.gift-image { max-width: 345px; }
+.ending { background: #fdf5f8; padding: clamp(17px, 3vw, 32px); }
+#theme .likes { display: block; border-top: 1px solid var(--line); }
+#theme .like {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 8px;
+  align-items: baseline;
+  padding: 11px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+}
+#theme .like .index { margin: 0; font-size: 19px; color: var(--muted); }
+#theme .like p { font-weight: 500; }
+#theme .like p br { display: none; }
+.changes h2 { font-size: clamp(24px, 2.4vw, 29px); }
+.changes .mini-label { color: var(--muted); }
+
+@media (max-width: 700px) {
+  .hero-copy { display: contents; }
+  .hero-layout { grid-template-areas: "lead" "cover" "context"; gap: 14px; }
+  .hero { padding-block: 19px 24px; }
+  .hero-visual-logo { margin-bottom: 10px; }
+  .hero-lead .mini-label { margin-bottom: 5px; }
+  .concept { margin-bottom: 0; }
+  .cover-wrap { max-width: min(79%, 300px); }
+  .hero-context { padding-top: 7px; }
+  .hero-meta { margin-top: 8px; font-size: 12px; }
+  .nav .inner { gap: 0 6px; justify-content: space-between; }
+  .nav a { white-space: normal; text-align: center; font-size: 12px; }
+  .episode-art > div { gap: 4px 10px; }
+  .episode-art .art-t:last-of-type { flex-basis: 100%; }
+  .character-grid { gap: 20px; }
+  .char-card { padding-top: 13px; }
+  .world-grid { grid-template-columns: minmax(0, 1fr); gap: 13px; }
+  .numbers { border-top: 1px solid var(--line); }
+  .wall-body { padding-left: 0; }
+  .manga-gallery-section { margin-inline: 0; }
+}
+@media print {
+  .hero { padding-block: 15px 22px; }
+  .hero-copy { display: block; }
+  .hero-layout { grid-template-areas: "copy cover"; grid-template-columns: 1.2fr 1fr; }
+  .section { padding-top: 25px; }
+  .storyworld, .keyscene { margin-top: 30px; padding-block: 18px; }
+}
+
+/* おまけ（恋シーンの小さなまとめ） */
+.omake-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 3vw, 34px); }
+.omake { padding-top: 16px; border-top: 1px solid var(--line); }
+.omake-thumbs { display: flex; justify-content: center; gap: 8px; height: 210px; margin-bottom: 12px; }
+.omake-thumbs.two { flex-direction: row-reverse; }
+.omake-thumbs .manga-trigger { width: auto; height: 100%; flex: 0 1 auto; min-width: 0; }
+.omake-thumbs img { width: auto; max-width: 100%; height: 100%; object-fit: contain; }
+.omake .tag { margin-bottom: 4px; }
+.extras .omake h3 { margin-bottom: 6px; font: 700 clamp(17px, 1.9vw, 19px)/1.55 var(--serif); }
+.omake p { margin: 0; font-size: 14px; line-height: 1.8; color: var(--muted); }
+.extra-intro .manga-hint { white-space: nowrap; }
+@media (max-width: 700px) {
+  .omake-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .omake { display: grid; grid-template-columns: 118px minmax(0, 1fr); column-gap: 14px; align-content: start; }
+  .omake-thumbs { grid-row: 1 / span 3; height: 150px; margin: 0; gap: 4px; }
+  .omake-thumbs.two .manga-trigger { flex: 1 1 0; }
+  .omake-thumbs.two img { width: 100%; }
+}
+@media print { .omake { break-inside: avoid; } .omake-thumbs { height: 150px; } }
+
+.changes { margin-bottom: 0; }
+#extra { padding-bottom: var(--section-space); }
+@media print { #extra { padding-bottom: 30px; } }
+@media (max-width: 700px) {
+  .omake-thumbs { height: auto; align-items: flex-start; }
+  .omake-thumbs .manga-trigger { height: auto; background: transparent; }
+  .omake-thumbs img { width: auto; max-width: 100%; height: auto; max-height: 150px; }
+}
+#climax .s-head { margin-bottom: clamp(14px, 2vw, 20px); }
+@media (max-width: 700px) {
+  .nav .inner { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
+  .nav a { white-space: nowrap; padding: 9px 2px; border-bottom: 1px solid #e8f0f4; }
+  .nav a:nth-last-child(-n + 3) { border-bottom: 0; }
+}
+#story .world-grid { grid-template-columns: minmax(0, 1fr); }
+</style>
+</head><body>
+<div class="page" id="top">
+<header class="top"><div class="inner"><a class="logo" href="#top">深海魚にはかなわない ｜ 企画書</a><div class="top-right"><button onclick="window.print()">印刷する</button></div></div></header>
+<section class="hero"><div class="inner hero-layout"><div class="hero-copy"><div class="hero-lead">
+<div class="mini-label">漫画企画・詳細版 ／ お仕事 × 恋愛 × 深海魚</div>
+<h1 class="sr-only">深海魚にはかなわない（仮）</h1><img alt="深海魚にはかなわない（仮）｜お仕事ラブコメディ" class="hero-visual-logo" src="images/logo.webp" width="652" height="253"/>
+<div class="concept">大人になっても、<br/>恋をすると不器用になる。</div>
+</div><div class="hero-context"><p class="hero-sub">深海魚に夢中な彼女と、そんな彼女に夢中になる彼。<br/>王道少女漫画のときめきを描く、<span class="genre">お仕事ラブコメディ。</span></p>
+<div class="hero-meta">ジャンル：お仕事ラブコメディ<br/>想定掲載媒体：『BE・LOVE』（講談社）／『ココハナ』（集英社）</div>
+</div></div><figure class="cover-wrap"><img alt="水槽で深海生物を撮影する美波と、そんな美波をやさしく見守る洋介。淡いパステルタッチの表紙イラスト" class="cover" src="images/cover.webp" width="1054" height="1492"/></figure></div></section>
+<nav aria-label="ページ内目次" class="nav"><div class="inner"><a href="#characters">登場人物</a><a href="#episode">第1話</a><a href="#walls">4つの壁</a><a href="#ending">最終話</a><a href="#scene">見せたいシーン</a></div></nav>
+<main>
+<section class="section inner" id="theme"><div class="s-head"><span class="num">01</span><h2>私の「好き」の軸</h2></div><div class="likes"><div class="like"><div class="index">01</div><p>恋をしたことで見えてくる、<br/>人間の不器用さやかわいさ</p></div><div class="like"><div class="index">02</div><p>好きなものを追いかけた先で、<br/>想像もしなかった世界に出会うこと</p></div><div class="like"><div class="index">03</div><p>出会いによって、<br/>お互いの人生が変わっていくこと</p></div></div></section>
+<section class="storyworld" id="story"><div class="inner world-grid"><div><h2 class="world-title">あらすじ</h2><p class="world-desc">舞台は、閉館の危機にある海辺の町の小さな水族館。</p><p class="world-desc">深海魚を愛する飼育員・美波は、廃止寸前の深海魚コーナーを守るため、館長の息子・洋介とSNS広報に挑む。</p><p class="world-desc">正反対の二人が、仕事にも恋にも不器用にぶつかりながら、「欠点」だと思われていたものを魅力に変えていく。</p></div></div></section>
+<section class="section inner" id="characters"><div class="s-head"><span class="num">02</span><h2>登場人物</h2></div><div class="character-grid">
+<article class="char-card pink"><figure><img alt="目を輝かせる飼育員・藤沢美波のキャラクターイメージ" src="images/minami.webp" width="200" height="219"/></figure><div><h3 class="char-name">藤沢 美波 <span>28歳</span></h3><p class="char-role">深海魚を愛する飼育員</p><div class="char-copy"><p>大学院まで進学した深海魚オタク。豊富な専門知識を持ち、深海魚の飼育に情熱を注ぐ。過去の恋愛経験から、深海魚に夢中な自分では恋愛がうまくいかないと思っている。</p></div></div></article>
+<article class="char-card blue"><figure><img alt="穏やかに微笑む瀬戸洋介のキャラクターイメージ" src="images/yosuke.webp" width="207" height="235"/></figure><div><h3 class="char-name">瀬戸 洋介 <span>34歳</span></h3><p class="char-role">水族館を愛する合理主義者</p><div class="char-copy"><p>館長の息子。幼い頃から親しんだ水族館を守るため、東京で経験を積んで帰郷。恋愛にはそれなりに慣れているが、美波に恋をしてからは不器用になる。</p></div></div></article>
+</div></section>
+<section class="section inner" id="episode"><div class="s-head"><span class="num">03</span><h2>第1話｜私が10万人呼びます！</h2></div><div class="episode"><div class="ep-body"><p>経営難の水族館に帰ってきた洋介は、経費削減のため深海魚コーナーの廃止を提案する。</p><p>猛反対する美波に、洋介は「深海魚コーナーを残すには年間来館者を現在の倍、10万人規模に増やす必要がある」と告げる。</p><p>「じゃあ、私が10万人呼びます！」</p><p>しかし、美波には集客の知識がない。</p><p>「……で、何したらいいんですか！？」</p><p>洋介とともにSNS広報に挑戦することになるが、<strong>期限までに成果が出なければ深海魚コーナーは廃止</strong>という条件付き。</p></div></div></section>
+<section class="section inner" id="walls"><div class="s-head"><span class="num">04</span><h2>物語を動かす、4つの壁</h2></div><p class="intro">主人公がどんな難題にぶつかり、何を変えていくのか。仕事と恋愛、二つの軸で物語が進む。</p><div class="wall-list">
+<article class="wall"><div class="wall-left"><div class="wall-num">01</div><h3 class="q">大好きなのに、その魅力が伝わらない</h3></div><div class="wall-body"><p>専門的すぎるSNS投稿は見てもらえず、館内の解説パネルもほとんど読まれていない。</p><p>洋介とともに来館者目線で展示や解説を見直し、深海魚の不思議な生態を伝えるリール動画に自ら出演。<strong>楽しそうに深海魚を語る美波の姿が、次第に人気を集めていく。</strong></p></div></article>
+<article class="wall"><div class="wall-left"><div class="wall-num">02</div><h3 class="q">好きな人の前で、自分らしくいられない</h3></div><div class="wall-body"><p>大学時代、恋人に「俺と魚とどっちが大事なの」と言われて別れた美波。洋介への恋心に気づいたとたん、深海魚の話を控えはじめる。</p><p>急に魚の話をしなくなった美波に、洋介は「俺、なんかした？」と問いかける。</p><p>「好きな人の前では、控えた方がいいのかなって……」</p><p>うっかり口にした「好きな人」。真っ赤になる美波に、洋介は照れながら返す。</p><p>「俺は、楽しそうに魚の話をしてる藤沢さんが好きだけど」</p><p><strong>二人は晴れて恋人同士になる。</strong></p></div></article>
+<article class="wall"><div class="wall-left"><div class="wall-num">03</div><h3 class="q">バズったのに、お客さんが来ない！</h3></div><div class="wall-body"><p>SNSのフォロワーは増えたものの、来館者数は伸び悩む。開館しても誰一人来館しない朝を迎えることも。</p><p>美波は毎年遠足に来る小学生たちを自ら案内し、飼育員ならではの知識や経験を生かして子どもたちの心をつかむ。</p><p>館内展示の改善や年間パスポートの活用、地元の漁師との連携を通じて、<strong>少しずつ水族館そのもののファンを増やしていく。</strong></p></div></article>
+<article class="wall"><div class="wall-left"><div class="wall-num">04</div><h3 class="q">恋人だからこそ、甘えない・甘やかさない</h3></div><div class="wall-body"><p>付き合いはじめた二人。だが、深海魚コーナーの存続を決めるのは洋介自身だ。</p><p>「彼女だから残した」と言わせたくない美波と、条件を一切ゆるめない洋介。</p><p>迎えた期限の日、来館者数は目標に届かず、洋介は約束どおり廃止を告げる。</p><p>その日の夜、心配する洋介に美波は告げる。</p><p>「……今日は、会いたくないです」</p><p>洋介の判断が正しいと理解しながらも、気持ちが追いつかない美波。</p><p><strong>仕事で妥協しないことと、恋人として支え合うことの違いに気づき、二人は改めて向き合う。</strong></p></div></article>
+</div></section>
+<section class="section inner" id="ending"><div class="s-head"><span class="num">06</span><h2>最終話｜深海魚にはかなわない</h2></div><div class="ending"><div class="ending-content"><p>深海魚コーナーの廃止を発表すると、全国の深海魚ファンから嘆願書が届き、地元住民からも存続を願う声が寄せられる。</p><p>それは広報活動だけでなく、美波が飼育員として長年積み重ねてきた努力の成果でもあった。</p><p>深海魚コーナーの価値を見直した洋介は、新たな経営戦略を打ち出す。</p><p>「深海魚に特化した水族館にしませんか」</p><p>設備改修のためのクラウドファンディングに挑戦。飼育員による特別解説ツアーなどの返礼品も人気を集め、募集終了間際に目標金額を達成する。</p><p>特別ツアーは新たな収益源となり、<strong>かつて廃止しようとしていた深海魚コーナーが、水族館の看板となる。</strong></p><p>水族館は経営難を乗り越え、美波と洋介は、仕事でも人生でもパートナーとなる。</p><p>そして迎えた、水族館での結婚式。</p><p>ウェディングドレス姿でも魚に夢中な美波を見て、洋介はつぶやく。</p><div class="ending-quote">「……ほんと、かなわないな」</div></div></div></section>
+<section class="keyscene" id="scene"><div class="inner key-grid"><figure class="key-img"><button class="manga-trigger" type="button" aria-label="深夜の水族館の漫画を拡大表示" aria-haspopup="dialog"><img alt="深夜の水槽の前で「……よかった」と涙をこぼして笑う美波。その頭に洋介がそっと手を置き、美波が驚いて見上げる漫画の1ページ。" decoding="async" src="images/scene-midnight.jpg" width="1122" height="1402"/></button></figure><div class="key-copy"><div class="mini-label">この作品で、最も描きたい瞬間</div><h2>深夜の水族館</h2><p>体調を崩した深海魚を、洋介とともに懸命に世話する美波。</p><p>深夜、ようやく回復の兆しが見え、安心した美波の目から涙がこぼれる。</p><p>その姿に、洋介は思わず彼女の頭を撫でてしまう。自分でも予想外の行動に戸惑いながら、美波への恋心を自覚する。</p><div class="scene-point">深海魚に夢中な美波の姿が、<br/>洋介を恋に落とす。</div></div></div></section>
+<section class="inner changes" id="changes"><div class="change-grid"><div><div class="mini-label" style="margin-bottom:8px">前回からの変更点</div><h2>「好き」を<br/>掘り下げて。</h2></div><div><p>前回のフィードバックをもとに「好き」をさらに掘り下げ、<span class="key">「やっぱり少女漫画が大好きなんだ！」</span>と再認識。</p><p style="margin-top:9px">恋愛要素を強め、交際前だけでなく交際後に訪れる壁も追加した。</p><p style="margin-top:9px">また、実際の水族館の経営再建事例をリサーチし、主人公たちが直面する困難と、その乗り越え方を具体化した。</p></div></div></section>
+<section class="section inner extras" id="extra"><div class="s-head"><h2>おまけ｜ほかにも描きたい、恋のシーン</h2></div><p class="extra-intro">仕事への情熱が恋のきっかけになり、恋をすることで二人の知らなかった表情が見えてくる。<span class="manga-hint">（イラストはタップで大きく表示できます）</span></p>
+<div class="omake-grid">
+<article class="omake"><div class="omake-thumbs"><button class="manga-trigger" type="button" aria-label="ガチャガチャの漫画を拡大表示" aria-haspopup="dialog"><img alt="見開きの漫画。右ページでは、あきらめかけた美波を洋介が「ちょっと待って」と止めてガチャを回し、「これじゃない！？」と笑顔で景品を見せる。左ページでは、その笑顔に美波がドキッとして深海魚の解説を始め、慌てて自分のときめきを否定する。" decoding="async" src="images/omake-gacha.jpg" width="1536" height="1024"/></button></div><span class="tag">見学デート</span><h3>「これじゃない！？」から、恋が動く。</h3><p>「SNSの研究」のはずが、なんだかデートみたい。美波が欲しがった深海魚のガチャを、洋介が何度も回してやっと引き当てる。嬉しそうな彼の笑顔に、今度は美波の胸が高鳴る。</p></article>
+<article class="omake"><div class="omake-thumbs"><button class="manga-trigger" type="button" aria-label="4コマのイメージを拡大表示" aria-haspopup="dialog"><img alt="水槽を見ながら熱く語る美波と、それを見守る洋介。最後は洋介が美波の頬にキスする4コマ風のイメージ画像" decoding="async" src="images/omake-4koma.webp" width="680" height="1208"/></button></div><span class="tag">付き合い始めた後</span><h3>水槽の向こう側から見た、二人。</h3><p>美波は変わらず魚を語り、洋介はそんな美波を見つめている。</p></article>
+<article class="omake"><div class="omake-thumbs"><button class="manga-trigger" type="button" aria-label="メンダコのイヤリングのイラストを拡大表示" aria-haspopup="dialog"><img alt="街のアクセサリーショップでメンダコのイヤリングを見つめ、藤沢美波の喜ぶ顔を想像してほほえむ瀬戸洋介。思い浮かべた美波の姿がふきだしに描かれたパステル色の少女漫画イラスト" decoding="async" src="images/omake-mendako.jpg" width="1050" height="1400"/></button></div><span class="tag">洋介の何気ない休日</span><h3>藤沢さん、絶対好きだろうな。</h3><p>休日の街で、メンダコのイヤリングを見つけた洋介。いつも冷静な彼が、好きな人のことを考えて、ひとりで少し嬉しくなる。</p></article>
+</div>
+</section>
+</main><footer class="footer"><div class="inner"><span>『深海魚にはかなわない』（仮）｜漫画企画書・詳細版　<span style="font-size:10px">※ 掲載イラストは作品イメージを伝えるためのAI生成ビジュアルです。</span></span><a href="#top">ページの先頭へ ↑</a></div></footer>
+</div><dialog aria-label="イラスト拡大表示" class="image-zoom" id="image-zoom"><div class="image-zoom-bar"><button aria-label="閉じる" class="image-zoom-close" type="button" autofocus>× 閉じる</button></div><img alt="漫画の拡大表示"/></dialog><script>
+(() => {
+  const dialog = document.getElementById('image-zoom');
+  const enlargedImage = dialog.querySelector('img');
+  const closeButton = dialog.querySelector('.image-zoom-close');
+  let trigger;
+
+  document.querySelectorAll('.manga-trigger').forEach((button) => {
+    button.addEventListener('click', () => {
+      const image = button.querySelector('img');
+      trigger = button;
+      enlargedImage.src = image.currentSrc || image.src;
+      enlargedImage.alt = image.alt;
+      dialog.showModal();
+      dialog.scrollTop = 0;
+    });
+  });
+
+  closeButton.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', (event) => {
+    if (event.target !== dialog) return;
+    const bounds = dialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right ||
+        event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    enlargedImage.removeAttribute('src');
+    trigger?.focus({ preventScroll: true });
+  });
+})();
+</script>
+</body></html>
